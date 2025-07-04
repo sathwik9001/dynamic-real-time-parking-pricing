@@ -1,0 +1,13 @@
+libraries used are:
+
+
+| Library             | Purpose                                                        |
+| ------------------- | -------------------------------------------------------------- |
+| pandas              | Reading dataset, manipulating data, filtering by time/location |
+| numpy               | Calculating normalized demand, scaling values                  |
+| bokeh               | Real-time visualization of pricing per location                |
+| IPython.display     | To clear outputs and update Bokeh charts in notebooks          |
+| asyncio             | Simulating real-time pricing logic (delay-based streaming)     |
+| math                | Used for distance calculations (optional in Model 3)           |
+| datetime            | Parsing and handling timestamp data                            |
+| random              | (If used) to simulate dynamic environmental conditions         |
