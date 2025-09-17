@@ -1,4 +1,4 @@
-# dynamic-real-time-parking-pricing
+
 !pip install pathway bokeh ipywidgets
 import pandas as pd
 import numpy as np
@@ -15,10 +15,10 @@ df['timestamp'] = pd.to_datetime(
 
 df = df.dropna(subset=['timestamp'])  # Drop invalid timestamps
 
-# ✅ Assign location_id column directly (instead of renaming)
+
 df['location_id'] = df['SystemCodeNumber'].astype(str)
 
-# ✅ Rename remaining columns
+#  Rename remaining columns
 df.rename(columns={
     'Occupancy': 'occupancy',
     'Capacity': 'capacity',
@@ -28,11 +28,11 @@ df.rename(columns={
     'VehicleType': 'vehicle_type'
 }, inplace=True)
 
-# ✅ Map traffic conditions
+#  Map traffic conditions
 traffic_map = {'low': 1, 'medium': 2, 'high': 3}
 df['traffic_level'] = df['traffic_level'].map(traffic_map).fillna(1)
 
-# ✅ Sort by time
+#  Sort by time
 df = df.sort_values(by='timestamp')
 # Base demand-based price (Model 2)
 def calculate_dynamic_price(
