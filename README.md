@@ -245,5 +245,5 @@ def stream_prices():
         except Exception as e:
             print(f"Error: {e}")
 
-# 🔁 Start in background
+# Start in background
 threading.Thread(target=stream_prices).start()
